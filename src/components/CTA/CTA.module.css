@@ -1,0 +1,161 @@
+.cta {
+    background: linear-gradient(135deg, var(--kapable-blue) 0%, var(--kapable-blue-dark) 100%);
+    color: white;
+    position: relative;
+    overflow: hidden;
+}
+
+.cta::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    right: -30%;
+    width: 80%;
+    height: 200%;
+    background: radial-gradient(circle at center, rgba(255, 255, 255, 0.1) 0%, transparent 70%);
+}
+
+.container {
+    position: relative;
+    z-index: 1;
+}
+
+.ctaContent {
+    max-width: 680px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.badge {
+    display: inline-block;
+    background-color: rgba(255, 255, 255, 0.2);
+    color: white;
+    padding: var(--space-2) var(--space-4);
+    border-radius: var(--radius-full);
+    font-size: var(--text-sm);
+    font-weight: 600;
+    margin-bottom: var(--space-6);
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    backdrop-filter: blur(8px);
+}
+
+.title {
+    font-size: var(--text-5xl);
+    font-weight: 700;
+    line-height: 1.1;
+    margin-bottom: var(--space-6);
+    color: white;
+}
+
+@media (max-width: 768px) {
+    .title {
+        font-size: var(--text-3xl);
+    }
+}
+
+.description {
+    font-size: var(--text-xl);
+    line-height: var(--leading-relaxed);
+    opacity: 0.9;
+    margin-bottom: var(--space-8);
+    color: rgba(255, 255, 255, 0.95);
+}
+
+.form {
+    max-width: 480px;
+    margin: 0 auto var(--space-8);
+}
+
+.inputGroup {
+    display: flex;
+    gap: var(--space-4);
+    margin-bottom: var(--space-4);
+}
+
+@media (max-width: 640px) {
+    .inputGroup {
+        flex-direction: column;
+    }
+}
+
+.emailInput {
+    flex: 1;
+    padding: 0.875rem 1.25rem;
+    font-size: var(--text-base);
+    background: rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: var(--radius);
+    color: white;
+    transition: all var(--transition);
+    backdrop-filter: blur(8px);
+}
+
+.emailInput:focus {
+    outline: none;
+    background: rgba(255, 255, 255, 0.15);
+    border-color: rgba(255, 255, 255, 0.3);
+    box-shadow: 0 0 0 3px rgba(255, 255, 255, 0.1);
+}
+
+.emailInput::placeholder {
+    color: rgba(255, 255, 255, 0.6);
+}
+
+.submitButton {
+    background: white;
+    color: var(--kapable-blue);
+    border: none;
+    font-weight: 600;
+}
+
+.submitButton:hover {
+    background: rgba(255, 255, 255, 0.95);
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-lg);
+}
+
+.submitButton:disabled {
+    opacity: 0.7;
+    cursor: not-allowed;
+}
+
+.formNote {
+    font-size: var(--text-sm);
+    opacity: 0.8;
+    color: rgba(255, 255, 255, 0.9);
+}
+
+.features {
+    display: flex;
+    justify-content: center;
+    gap: var(--space-8);
+    flex-wrap: wrap;
+    margin-top: var(--space-8);
+}
+
+.feature {
+    display: flex;
+    align-items: center;
+    gap: var(--space-2);
+    font-size: var(--text-sm);
+    font-weight: 500;
+    opacity: 0.9;
+}
+
+.checkIcon {
+    width: 20px;
+    height: 20px;
+    color: white;
+}
+
+@media (max-width: 640px) {
+    .features {
+        flex-direction: column;
+        gap: var(--space-4);
+    }
+
+    .feature {
+        justify-content: center;
+    }
+}
