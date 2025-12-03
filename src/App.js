@@ -141,6 +141,14 @@ const AdvancedLeadership = () => {
     };
   }, []);
 
+  // Smooth scroll function
+  const scrollToSection = (sectionId) => {
+    const element = document.getElementById(sectionId);
+    if (element) {
+      element.scrollIntoView({ behavior: 'smooth' });
+    }
+  };
+
   const handleProgramSelect = (programId) => {
     setSelectedPrograms(prev =>
       prev.includes(programId)
@@ -156,7 +164,7 @@ const AdvancedLeadership = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    // Handle form submission
+    alert('Thank you for your interest! We will contact you shortly.');
     console.log('Form submitted:', { ...formData, selectedPrograms });
   };
 
@@ -187,19 +195,38 @@ const AdvancedLeadership = () => {
         </div>
 
         <div className="hero-content">
+          {/* Fixed Navigation - All anchor tags replaced with buttons */}
           <nav className="glass-nav">
             <div className="nav-brand">
               <span className="brand-icon">🎯</span>
               <span className="brand-text">kapab<span className="gradient-text">le</span></span>
             </div>
             <div className="nav-menu">
-              <a href="#programs" className="nav-link">Programs</a>
-              <a href="#outcomes" className="nav-link">Outcomes</a>
-              <a href="#testimonials" className="nav-link">Testimonials</a>
-              <a href="#enroll" className="nav-button">
+              <button
+                className="nav-link"
+                onClick={() => scrollToSection('programs')}
+              >
+                Programs
+              </button>
+              <button
+                className="nav-link"
+                onClick={() => scrollToSection('testimonials')}
+              >
+                Testimonials
+              </button>
+              <button
+                className="nav-link"
+                onClick={() => scrollToSection('enroll')}
+              >
+                Contact
+              </button>
+              <button
+                className="nav-button"
+                onClick={() => scrollToSection('enroll')}
+              >
                 <span>Book Session</span>
                 <span className="button-arrow">→</span>
-              </a>
+              </button>
             </div>
           </nav>
 
@@ -231,12 +258,18 @@ const AdvancedLeadership = () => {
             </div>
 
             <div className="hero-cta">
-              <button className="primary-cta">
+              <button
+                className="primary-cta"
+                onClick={() => scrollToSection('enroll')}
+              >
                 <span className="cta-text">Book Session for ₹499</span>
                 <span className="cta-badge">75% OFF</span>
                 <span className="cta-sparkle">✨</span>
               </button>
-              <button className="secondary-cta">
+              <button
+                className="secondary-cta"
+                onClick={() => scrollToSection('programs')}
+              >
                 <span>View Program Details</span>
                 <span className="arrow-icon">↓</span>
               </button>
@@ -546,7 +579,7 @@ const AdvancedLeadership = () => {
         </div>
       </section>
 
-      {/* Footer */}
+      {/* Footer - All anchor tags fixed */}
       <footer className="footer">
         <div className="footer-container">
           <div className="footer-main">
@@ -563,34 +596,66 @@ const AdvancedLeadership = () => {
             <div className="footer-links">
               <div className="link-column">
                 <h4>Programs</h4>
-                <a href="#">Leadership Development</a>
-                <a href="#">Communication Mastery</a>
-                <a href="#">Executive Presence</a>
-                <a href="#">Strategic Thinking</a>
+                <button className="footer-link" onClick={() => scrollToSection('programs')}>
+                  Leadership Development
+                </button>
+                <button className="footer-link" onClick={() => scrollToSection('programs')}>
+                  Communication Mastery
+                </button>
+                <button className="footer-link" onClick={() => scrollToSection('programs')}>
+                  Executive Presence
+                </button>
+                <button className="footer-link" onClick={() => scrollToSection('programs')}>
+                  Strategic Thinking
+                </button>
               </div>
 
               <div className="link-column">
                 <h4>Company</h4>
-                <a href="#">About Us</a>
-                <a href="#">Success Stories</a>
-                <a href="#">Careers</a>
-                <a href="#">Press</a>
+                <button className="footer-link" onClick={() => window.open('/about', '_blank')}>
+                  About Us
+                </button>
+                <button className="footer-link" onClick={() => scrollToSection('testimonials')}>
+                  Success Stories
+                </button>
+                <button className="footer-link" onClick={() => window.open('/careers', '_blank')}>
+                  Careers
+                </button>
+                <button className="footer-link" onClick={() => window.open('/press', '_blank')}>
+                  Press
+                </button>
               </div>
 
               <div className="link-column">
                 <h4>Resources</h4>
-                <a href="#">Blog</a>
-                <a href="#">Research</a>
-                <a href="#">Tools</a>
-                <a href="#">Webinars</a>
+                <button className="footer-link" onClick={() => window.open('/blog', '_blank')}>
+                  Blog
+                </button>
+                <button className="footer-link" onClick={() => window.open('/research', '_blank')}>
+                  Research
+                </button>
+                <button className="footer-link" onClick={() => window.open('/tools', '_blank')}>
+                  Tools
+                </button>
+                <button className="footer-link" onClick={() => window.open('/webinars', '_blank')}>
+                  Webinars
+                </button>
               </div>
 
               <div className="link-column">
                 <h4>Connect</h4>
-                <a href="#">Contact</a>
-                <a href="#">Support</a>
-                <a href="#">Partnerships</a>
-                <a href="#">Schedule Demo</a>
+                <button className="footer-link" onClick={() => scrollToSection('enroll')}>
+                  Contact
+                </button>
+                <button className="footer-link" onClick={() => window.open('/support', '_blank')}>
+                  Support
+                </button>
+                <button className="footer-link" onClick={() => window.open('/partnerships', '_blank')}>
+                  Partnerships
+                </button>
+                <button className="footer-link" onClick={() => scrollToSection('enroll')}>
+                  Schedule Demo
+                </button>
               </div>
             </div>
           </div>

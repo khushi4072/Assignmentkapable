@@ -1393,3 +1393,85 @@ body {
         margin: 0 1rem;
     }
 }
+
+/* Add these to your LeadershipWebsite.css file */
+
+/* Navigation button styles */
+.nav-menu button {
+    background: none;
+    border: none;
+    cursor: pointer;
+    font-family: inherit;
+    padding: 0;
+    color: inherit;
+}
+
+.nav-link {
+    color: var(--light);
+    text-decoration: none;
+    font-weight: 500;
+    position: relative;
+    padding: 0.5rem 0;
+    transition: color var(--transition-base);
+    background: none;
+    border: none;
+    cursor: pointer;
+    font-size: 1rem;
+}
+
+.nav-link::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background: var(--gradient-1);
+    transition: width var(--transition-base);
+}
+
+.nav-link:hover {
+    color: var(--primary-light);
+}
+
+.nav-link:hover::after {
+    width: 100%;
+}
+
+.nav-button {
+    background: var(--gradient-1);
+    color: white;
+    padding: 0.75rem 1.5rem;
+    border-radius: var(--radius-full);
+    font-weight: 600;
+    border: none;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    transition: all var(--transition-base);
+}
+
+.nav-button:hover {
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-lg);
+}
+
+/* Footer link buttons */
+.footer-link {
+    background: none;
+    border: none;
+    color: var(--gray-400);
+    text-align: left;
+    padding: 0;
+    margin-bottom: 0.5rem;
+    font-size: 0.875rem;
+    cursor: pointer;
+    transition: color var(--transition-base);
+    display: block;
+    width: 100%;
+}
+
+.footer-link:hover {
+    color: white;
+}
